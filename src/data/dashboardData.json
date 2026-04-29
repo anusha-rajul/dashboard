@@ -1,0 +1,119 @@
+{
+  "kpis": {
+    "totalUsers": 18234,
+    "activeUsers": 12450,
+    "newUsersThisMonth": 1340,
+    "totalRevenue": 1245000,
+    "monthlyRevenue": 210000,
+    "totalOrders": 8450,
+    "conversionRate": 3.8
+  },
+
+  "userGrowth": [
+    { "month": "Jan", "users": 1200 },
+    { "month": "Feb", "users": 1800 },
+    { "month": "Mar", "users": 2400 },
+    { "month": "Apr", "users": 3200 },
+    { "month": "May", "users": 4100 },
+    { "month": "Jun", "users": 5200 },
+    { "month": "Jul", "users": 6100 }
+  ],
+
+  "revenueTrend": [
+    { "month": "Jan", "revenue": 80000 },
+    { "month": "Feb", "revenue": 95000 },
+    { "month": "Mar", "revenue": 120000 },
+    { "month": "Apr", "revenue": 150000 },
+    { "month": "May", "revenue": 180000 },
+    { "month": "Jun", "revenue": 210000 },
+    { "month": "Jul", "revenue": 240000 }
+  ],
+
+  "ordersTrend": [
+    { "month": "Jan", "orders": 400 },
+    { "month": "Feb", "orders": 600 },
+    { "month": "Mar", "orders": 850 },
+    { "month": "Apr", "orders": 1200 },
+    { "month": "May", "orders": 1500 },
+    { "month": "Jun", "orders": 1800 },
+    { "month": "Jul", "orders": 2100 }
+  ],
+
+  "trafficSources": [
+    { "source": "Organic Search", "value": 45 },
+    { "source": "Direct", "value": 25 },
+    { "source": "Social Media", "value": 15 },
+    { "source": "Referral", "value": 10 },
+    { "source": "Ads", "value": 5 }
+  ],
+
+  "deviceUsage": [
+    { "device": "Mobile", "users": 9500 },
+    { "device": "Desktop", "users": 6200 },
+    { "device": "Tablet", "users": 2534 }
+  ],
+
+  "topProducts": [
+    { "name": "Perfume Elite", "sales": 540, "revenue": 270000 },
+    { "name": "Luxury Oud", "sales": 430, "revenue": 215000 },
+    { "name": "Fresh Mist", "sales": 390, "revenue": 175000 },
+    { "name": "Night Essence", "sales": 320, "revenue": 160000 },
+    { "name": "Ocean Breeze", "sales": 280, "revenue": 140000 }
+  ],
+
+  "salesByCategory": [
+    { "category": "Perfumes", "sales": 1200 },
+    { "category": "Skincare", "sales": 800 },
+    { "category": "Haircare", "sales": 500 },
+    { "category": "Makeup", "sales": 700 }
+  ],
+
+  "regionalData": [
+    { "region": "India", "users": 8000, "revenue": 400000 },
+    { "region": "USA", "users": 4200, "revenue": 300000 },
+    { "region": "UK", "users": 2500, "revenue": 180000 },
+    { "region": "Canada", "users": 1800, "revenue": 120000 },
+    { "region": "Australia", "users": 1734, "revenue": 95000 }
+  ],
+
+  "weeklyActivity": [
+    { "day": "Mon", "users": 1200 },
+    { "day": "Tue", "users": 1500 },
+    { "day": "Wed", "users": 1700 },
+    { "day": "Thu", "users": 1600 },
+    { "day": "Fri", "users": 1900 },
+    { "day": "Sat", "users": 2200 },
+    { "day": "Sun", "users": 2000 }
+  ],
+
+  "recentOrders": [
+    {
+      "orderId": "#ORD001",
+      "user": "Rahul Sharma",
+      "product": "Perfume Elite",
+      "amount": 2500,
+      "status": "Delivered"
+    },
+    {
+      "orderId": "#ORD002",
+      "user": "Anita Verma",
+      "product": "Luxury Oud",
+      "amount": 3000,
+      "status": "Shipped"
+    },
+    {
+      "orderId": "#ORD003",
+      "user": "John Smith",
+      "product": "Fresh Mist",
+      "amount": 1800,
+      "status": "Pending"
+    },
+    {
+      "orderId": "#ORD004",
+      "user": "Priya Patel",
+      "product": "Night Essence",
+      "amount": 2200,
+      "status": "Delivered"
+    }
+  ]
+}
