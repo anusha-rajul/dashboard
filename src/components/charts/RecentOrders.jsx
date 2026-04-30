@@ -7,11 +7,9 @@ const RecentOrders = () => {
     const filteredData = selector.product === "all" ? data.recentOrders : data.recentOrders.filter((item) => item.product.toLowerCase() === selector.product.toLowerCase())
 
   return (
-    <div style={{width: '100%', height: 300}}>
+    <div style={{width: '100%', height: 300}} >
           <table className='table-auto border-separate border border-gray-400 border-spacing-y-3 border-spacing-x-6 w-full'>
-              <caption className='caption-top'>
-                  Recent Orders
-              </caption>
+             
               <thead>
                   <tr>
                   <th className='px-4 py-2'>Order Id</th>
