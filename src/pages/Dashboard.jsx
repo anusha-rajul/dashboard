@@ -22,7 +22,7 @@ const Dashboard = () => {
       <div id='first' className="bg-white dark:bg-gray-800 dark:text-white container px-10 mx-auto">
       <div className="relative">
        <div className="flex flex-wrap justify-center gap-4 fixed  top-0 right-0 left-0 m-3 p-4 z-50">
-      <select className='px-6 py-3 bg-gray-300 dark:bg-gray-500 rounded-lg' value={selector.month} onChange={(e) => setSelector({ ...selector, month: e.target.value })}>
+      <select className='px-6 py-3 bg-gray-800 text-white dark:bg-gray-500 rounded-lg' value={selector.month} onChange={(e) => setSelector({ ...selector, month: e.target.value })}>
         <option value="all">All</option>
         <option value="jan">Jan</option>
         <option value="feb">Feb</option>
@@ -33,7 +33,7 @@ const Dashboard = () => {
         <option value="jul">Jul</option>
       </select>
 
-      <select className='px-6 py-3 bg-gray-300 rounded-lg dark:bg-gray-500' value={selector.region} onChange={(e) => setSelector({ ...selector, region: e.target.value })}>
+      <select className='px-6 py-3 bg-gray-800 text-white rounded-lg dark:bg-gray-500' value={selector.region} onChange={(e) => setSelector({ ...selector, region: e.target.value })}>
         <option value="all">All</option>
         <option value="india">India</option>
         <option value="usa">Usa</option>
@@ -42,18 +42,18 @@ const Dashboard = () => {
         <option value="australia">Australia</option>
       </select>
 
-      <select className='px-6 py-3 bg-gray-300 rounded-lg dark:bg-gray-500' value={selector.product} onChange={(e) => setSelector({ ...selector, product: e.target.value })}>
+      <select className='px-6 py-3 bg-gray-800 text-white rounded-lg dark:bg-gray-500' value={selector.product} onChange={(e) => setSelector({ ...selector, product: e.target.value })}>
         <option value="all">All</option>
         {products.map((prod) => (
           <option key={prod} value={prod}>{prod}</option>
           ))}
       </select>
 
-      <button className='px-6 py-3 bg-gray-300 rounded-lg dark:bg-gray-500 active:scale-95' onClick={()=>setSelector({month:"all", region:"all", product:"all"})}>
+      <button className='px-6 py-3 bg-gray-800 text-white rounded-lg dark:bg-gray-500 active:scale-95' onClick={()=>setSelector({month:"all", region:"all", product:"all"})}>
           Reset filter
             </button>
             
-            <button className='px-6 py-3 bg-gray-300 rounded-lg dark:bg-gray-500 active:scale-95' onClick={changeTheme}>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</button>
+            <button className='px-6 py-3 bg-gray-800 text-white rounded-lg dark:bg-gray-500 active:scale-95' onClick={changeTheme}>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</button>
         </div>
       </div>
     <div className='grid md:grid-cols-3 lg:grid-cols-5 gap-5 pt-28' >

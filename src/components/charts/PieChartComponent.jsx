@@ -33,7 +33,7 @@ const PieChartComponent = () => {
           </ResponsiveContainer>
 
           <div className="flex justify-center p-2">
-          <select className="bg-blue-300 p-2 rounded-lg" value={pieChartFilter} onChange={(e)=>setPieChartFilter(e.target.value )}>
+          <select className="bg-gray-800 text-white dark:bg-gray-500 p-2 rounded-lg" value={pieChartFilter} onChange={(e)=>setPieChartFilter(e.target.value )}>
               <option value="traffic">Traffic</option>
               <option value="device">Device usage</option>
           </select>

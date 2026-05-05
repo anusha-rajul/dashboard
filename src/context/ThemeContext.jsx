@@ -4,13 +4,11 @@ export const ThemeContextComponent = createContext();
 
 const ThemeContext = (props) => {
 
-
   const [theme, setTheme] = useState('dark')
 
   function changeTheme() {
-    setTheme((prev)=> prev === 'dark' ? 'light' : 'dark')
+    setTheme((prev)=>prev === 'dark' ? 'light' : 'dark')
   }
-
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -20,7 +18,6 @@ const ThemeContext = (props) => {
       document.documentElement.classList.remove('dark')
     }
   },[theme])
-
 
   return (
       <ThemeContextComponent.Provider value={{changeTheme, theme}}>
