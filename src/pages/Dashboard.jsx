@@ -1,5 +1,5 @@
 
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Revenue from '../components/cards/Revenue'
 import TotalUsers from '../components/cards/TotalUsers'
 import AreaChartComponent from '../components/charts/AreaChartComponent'
@@ -10,18 +10,37 @@ import RecentOrders from '../components/charts/RecentOrders'
 import RegionalData from '../components/charts/RegionalData'
 import { FilterContextComponent } from '../context/FilterContext'
 import { ThemeContextComponent } from '../context/ThemeContext'
+import BarChartSkeleton from '../components/Loading/BarChartSkeleton'
+import ChartSkeleton from '../components/Loading/ChartSkeleton'
+import Skeleton from 'react-loading-skeleton'
+import PieChartSkeleton from '../components/Loading/PieChartSkeleton'
+import RegionalChart from '../components/Loading/RegionalChart'
+
 
 const Dashboard = () => {
   const { selector, setSelector, pieChartFilter } = useContext(FilterContextComponent)
-  const {changeTheme, theme} = useContext(ThemeContextComponent)
+  const { changeTheme, theme } = useContext(ThemeContextComponent)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    
+    const timer = setTimeout(() => {
+       setIsLoading(false)
+    }, 300)
+    
+    return () => clearTimeout(timer)
+  },[selector])
   
   const products = ["Perfume Elite", "Luxury Oud", "Fresh Mist", "Night Essence"];
  
   return (
     <>
-      <div id='first' className="bg-white dark:bg-gray-800 dark:text-white container px-10 mx-auto">
-      <div className="relative">
-       <div className="flex flex-wrap justify-center gap-4 fixed  top-0 right-0 left-0 m-3 p-4 z-50">
+      <div id='first' className="text-center bg-white dark:bg-gray-800 dark:text-white container px-10 mx-auto">
+  
+        <div className="relative">
+                 <h1 className='font-bold text-xl'>Filter by Month / Region / Product</h1>
+          <div className="flex flex-wrap justify-center gap-4 fixed  top-0 right-0 left-0 m-3 p-4 z-50">
+           
       <select className='px-6 py-3 bg-gray-800 text-white dark:bg-gray-500 rounded-lg' value={selector.month} onChange={(e) => setSelector({ ...selector, month: e.target.value })}>
         <option value="all">All</option>
         <option value="jan">Jan</option>
@@ -57,39 +76,41 @@ const Dashboard = () => {
         </div>
       </div>
     <div className='grid md:grid-cols-3 lg:grid-cols-5 gap-5 pt-28' >
-          <TotalUsers />
-          <Revenue />
+          {isLoading ? [1, 2, 3, 4, 5].map((_,i) => (
+            <Skeleton key={i} height={50} width={200} borderRadius={10} />
+          )): <><TotalUsers />
+          <Revenue /></>}
     </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-20 p-10'>
           <div className='w-full'>
             <h2 className='font-semibold text-md md:text-lg text-center'>Monthly User Growth</h2>
-            <LineChartComponent />
+           {isLoading ? <ChartSkeleton /> : <LineChartComponent />}
           </div>
         
           <div className='w-full'>
           <h2 className='font-semibold text-md md:text-lg text-center'>Monthly Revenue Trend</h2>
-          <AreaChartComponent />
+          {isLoading ? <ChartSkeleton /> : <AreaChartComponent />}
           </div>
         
           <div className='w-full'>
             <h2 className='font-semibold text-md md:text-lg text-center'>{pieChartFilter === 'traffic' ? "Traffic Sources Distribution" : "Device Usage Distribution"}</h2>
-          <PieChartComponent />
+          {isLoading ? <PieChartSkeleton /> : <PieChartComponent />}
           </div>
 
           <div className='w-full'>
             <h2 className='font-semibold text-md md:text-lg text-center'>Monthly Orders Overview</h2>
-            <BarChartComponent />
+            {isLoading ?  <BarChartSkeleton height={250} /> : <BarChartComponent />}
         </div>
         
           <div className='w-full col-span-1 md:col-span-2'>
             <h2 className='font-semibold text-md md:text-lg text-center'>Users & Revenue by Region</h2>
-          <RegionalData />
+          {isLoading ? <RegionalChart /> : <RegionalData />}
           </div>
          
           <div className='w-full col-span-1 md:col-span-2 overflow-x-auto'>
             <h2 className='font-semibold text-md md:text-lg text-center'>Latest Customer Orders</h2>
-           <RecentOrders />
+          {isLoading ? <ChartSkeleton /> :  <RecentOrders />}
           </div>
      
    

@@ -4,10 +4,10 @@ export const ThemeContextComponent = createContext();
 
 const ThemeContext = (props) => {
 
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
 
   function changeTheme() {
-    setTheme((prev)=>prev === 'dark' ? 'light' : 'dark')
+    setTheme((prev)=>prev === 'light' ? 'dark' : 'light')
   }
 
   useEffect(() => {
